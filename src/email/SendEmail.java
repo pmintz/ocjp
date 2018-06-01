@@ -2,10 +2,11 @@ package email;
 
 //File Name SendEmail.java
 
+//File Name SendEmail.java
+
 import java.util.*;
 import javax.mail.*;
 import javax.mail.internet.*;
-import javax.net.ssl.SSLSession;
 import javax.activation.*;
 
 public class SendEmail {
@@ -27,7 +28,7 @@ public static void main(String [] args) {
    properties.setProperty("mail.smtp.host", host);
 
    // Get the default Session object.
-   Session session = new Session.getDefaultInstance(properties);
+   Session session = Session.getDefaultInstance(properties);
 
    try {
       // Create a default MimeMessage object.
