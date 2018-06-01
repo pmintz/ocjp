@@ -13,13 +13,14 @@ public class SendEmail {
 
 public static void main(String [] args) {    
    // Recipient's email ID needs to be mentioned.
-   String to = "abcd@gmail.com";
+   String to = "mscarpace@deloitte.com";
 
    // Sender's email ID needs to be mentioned
-   String from = "web@gmail.com";
+   String from = "lheinitz@deloitte.com";
 
    // Assuming you are sending email from localhost
-   String host = "localhost";
+   //use "ping smtp" to locate smtp host
+   String host = "10.27.30.187";
 
    // Get system properties
    Properties properties = System.getProperties();
