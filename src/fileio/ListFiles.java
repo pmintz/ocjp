@@ -10,5 +10,7 @@ class ListFiles {
 		try(Stream<Path> entries = Files.list(Paths.get("."))) {
 			entries.forEach(System.out::println);
 		}
+		//recursively walk path (go all the way down the path in each path in this directory
+		Files.walk(Paths.get(".")).forEach(System.out::println);
 	}
 }
