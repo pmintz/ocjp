@@ -18,7 +18,7 @@ public static void main(String [] args) {
    // Sender's email ID needs to be mentioned
    String from = "lheinitz@deloitte.com";
 
-   // Assuming you are sending email from localhost
+   
    //use "ping smtp" to locate smtp host
    String host = "10.27.30.187";
 

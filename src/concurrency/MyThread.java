@@ -12,9 +12,11 @@ class MyThread extends Thread {
 		}
 		System.out.println("In run(); thread name is: " + getName());
 	}	
-	public static void main(String args[]) {
+	public static void main(String args[]) throws InterruptedException {
 		Thread myThread = new MyThread();
 		myThread.start();
+		myThread.join();  //have to start thread before waiting for it to die
+		
 		System.out.println("In main(); thread name: " +
 				Thread.currentThread().getName());
 	}

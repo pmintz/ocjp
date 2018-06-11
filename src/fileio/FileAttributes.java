@@ -6,6 +6,9 @@ import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.nio.file.attribute.BasicFileAttributes;
+
 class FileAttributes {
 	public static void main(String[] args) {
 		Path path = Paths.get(args[0]);
@@ -23,9 +26,14 @@ class FileAttributes {
 			System.out.println("isDirectory: " + object);
 			
 			//Map<String,Object> readAttributes(Path path, *, LinkOption... options)
-			Map<String,Object> readAttributes(path, *, LinkOption.NOFOLLOW_LINKS);
+			//Map<String,Object> readAttributes(path, "*", LinkOption.NOFOLLOW_LINKS);
+			Map<String, Object> fileAttributes = Files.readAttributes(path, "dos:*", LinkOption.NOFOLLOW_LINKS);
 			/*<A extends BasicFileAttributes> A readAttributes(Path path, Class<A> type, LinkOption...
 			options)*/
+			
+			for(Entry<String, Object> m : fileAttributes.entrySet()){
+				System.out.println(m.toString());
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

@@ -19,5 +19,8 @@ class PathInfo2 {
 				testPathNormalized.toAbsolutePath());
 		System.out.println("Its normalized real path is: " +
 				testFilePath.toRealPath (LinkOption.NOFOLLOW_LINKS));
+		
+		/*System.out.println("Its normalized real path is: " +
+				testFilePath.toRealPath (LinkOption.values()));*/
 	}
 }

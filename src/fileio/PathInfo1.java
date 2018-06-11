@@ -2,7 +2,8 @@ package fileio;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 // Class to illustrate how to use Path interface and its methods
-public class PathInfo1 {
+import java.util.Comparator;
+public class PathInfo1 implements /*Comparable*/Comparator {
 	public static void main(String[] args) {
 		// create a Path object by calling static method get() in Paths class
 		Path testFilePath = Paths.get("C:\\testfile.txt");
@@ -17,4 +18,16 @@ public class PathInfo1 {
 			System.out.println("\t path element: " + element);
 		}
 	}
+
+	@Override
+	public int compare(Object o1, Object o2) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	//@Override
+/*	public int compareTo(Object o) {
+		// TODO Auto-generated method stub
+		return 0;
+	}*/
 }
