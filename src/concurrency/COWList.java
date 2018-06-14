@@ -15,6 +15,11 @@ public class COWList {
 			aList.add("four");
 		}
 		
+		while(listIter.hasNext()) {
+			System.out.println(listIter.next());
+			
+		}
+		
 		Iterator listIter2 = aList.iterator();
 		while(listIter2.hasNext()){
 			System.out.println(listIter2.next());
