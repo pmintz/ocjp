@@ -2,7 +2,11 @@ package interfaces;
 
 @FunctionalInterface
 public interface Example3 extends Example2 {
-	//int q = 4;
+	int q = 4;
+	
+	RegularClass rc = new RegularClass();
+	
+	
 	
 	@Override
 	String toString();

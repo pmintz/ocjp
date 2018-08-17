@@ -3,6 +3,10 @@ package interfaces;
 public interface Example extends Example2, Example3 {
 	int x =2;
 	
+	Object o = new Object();
+	
+	
+	
 	void method();
 	
 	default void remove(){

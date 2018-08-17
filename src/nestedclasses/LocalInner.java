@@ -3,20 +3,21 @@ package nestedclasses;
 import nestedclasses.NonLocalInner.NonLocalInnerNested;
 
 class LocalInner {
-	/*static*/ int x;
+	/*static*/ int outer;
 	NonLocalInner.NonLocalInnerNested foo(/*final*/ NonLocalInner.NonLocalInnerNested //even if you do not 
 			//declare final, compiler will effectively treat it as final.
 			//This prevents you from assigning another object of the same type. 
 			//Rule is: you cannot assign to the variable that you are accessing in the local class.  
 			nl){
 		//NonLocalInner nl1 = new NonLocalInner();
-		int x= 5;
+		int z= 5;
+		//nl = new NonLocalInner.NonLocalInnerNested();
 		class LocalInnerNested extends NonLocalInner.NonLocalInnerNested
 		{
 			int x = 4;
 			int y = x;
+			//NonLocalInner.NonLocalInnerNested nl = new NonLocalInner.NonLocalInnerNested();
 			
-		
 			/*LocalInnerNested(int num){
 				//nl.super();
 				nl1.super();
@@ -24,14 +25,18 @@ class LocalInner {
 				System.out.println("y = " + y);
 				
 			}*/
-			public void print(){ System.out.println("Inside Local class");}
+			public void print(){ 
+				final NonLocalInnerNested nl = new NonLocalInner.NonLocalInnerNested();
+				int y;
+				InnerClass c = new InnerClass();
+				System.out.println("Inside Local class");}
 			
 			@Override
 			public String toString(){
 				return "You selected a "
 						+ "color with "
 						+ "RGB values " //;
-						+ nl;
+						+ nl + z + outer;
 			}
 		}	
 			//nl = new LocalInnerNestedClass.NonLocalInnerNested(); //will cause error.  nl needs to be final or effectively final IF you are using it in your code.  

@@ -12,11 +12,13 @@ class FirstLambda<T> implements LambdaFunction3 /*implements Iterable<T>*/ {
 	
 	Object[] elementData;
 	Object [] test;
-	String s;
+	String s = "This keyword refers to FirstLambda object";
 	 int x = 1;
 	 
 	
 	public static void main(String []args) {
+		FirstLambda f = new FirstLambda();
+		f.testLambdaFunction();
 		
 		 int y = 5;
 		
@@ -136,6 +138,11 @@ class FirstLambda<T> implements LambdaFunction3 /*implements Iterable<T>*/ {
 		public RandomClass getRandomClass() {
 			// TODO Auto-generated method stub
 			return null;
+		}
+		
+		public void testLambdaFunction(){
+			LambdaFunction<String> f = (String x) ->{ x+= this.s + " confirmed"; System.out.println(x);};
+			f.call("Testing this keyword inside lambda function. ");
 		}
 			
 			

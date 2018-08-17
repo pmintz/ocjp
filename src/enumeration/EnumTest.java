@@ -31,6 +31,7 @@ enum AnotherType{something,or,another};
 	
 	public static void main(String[] args) {
 		EnumTest enumTest1 = new EnumTest(PrinterType.LASER);
+		System.out.println(PrinterType.LASER.getPrintPageCapacity());
 		enumTest1.feature();
 		EnumTest enumTest2 = new EnumTest(PrinterType.INKJET);
 		enumTest2.feature();
